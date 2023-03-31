@@ -1,14 +1,14 @@
 class Dinosaur:
 
-    def __init__(self,name, atack_power) -> None:
+    def __init__(self,name, atack_power,health) -> None:
         self.name = name
         self.attack_power = atack_power
         self.health = 100
 
-    def attack_enemy(self,attack_power, dinosaur):
+    def attack_robot(self,attack_power, robot):
         self.attack_power = attack_power
-        self.enemy = dinosaur
-        dinosaur.health -= attack_power
+        self.enemy = robot
+        robot.health -= attack_power
         
         
 

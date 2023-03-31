@@ -4,3 +4,8 @@ class Weapon:
         self.attack_power = attack_power
 
 
+    
+
+
+
+
