@@ -1,15 +1,15 @@
 from weapon import Weapon
 
-Weapon('the big stick', 15)
-
 
 class Robot:
-    def __init__(self, name, health, active_weapon) -> None:
+    def __init__(self, name) -> None:
         self.name = name
         self.health = 100
-        self.active_weapon = Weapon()
+        self.weapon = Weapon("big stick", 15)
+
     
     def attack_dinosaur(self, dinosaur):
         dinosaur.health -= self.weapon.attack_power
+        print(dinosaur.health)
 
 
