@@ -21,6 +21,7 @@ class Battlefield:
     def display_welcome(self):
         print('Welcome to the THUNDERDOME!!!!')
         
+#(10 points): As a developer, I want the battle to conclude once either the Robot or the Dinosaur has its health points reduced to zero.
 
     def battle_phase(self,):
         while dinosaur.health > 0 and robot.health > 0:
