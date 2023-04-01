@@ -1,8 +1,10 @@
 from robot import Robot
 from robot import Robot
 
+from herd import Herd
 
-dinosaur = Robot('Trex',30)
+
+dinosaur = Robot('Trex',20)
 robot = Robot('Robotto')
 
 
@@ -38,7 +40,5 @@ class Battlefield:
         elif robot.health <= 0:
             print(f'{dinosaur.name} is our winner')
 
-
-
-
-    #5 points): As a developer, I want to create 2 additional Fleet and Herd classes, allowing for a list of 3 Robots to battle against a list of 3 Dinosaurs.
+    
+ #5 points): As a developer, I want to create 2 additional Fleet and Herd classes, allowing for a list of 3 Robots to battle against a list of 3 Dinosaurs.
