@@ -3,19 +3,19 @@ import random
 from robot import Robot
 from dinosaur import Dinosaur
 
-from herd import Herd
-from fleet import Fleet
 
-dinosaur = random.choice(Herd)
-robot = random.choice(Robot)
+dinosaur = Dinosaur('Trex',30) 
+robot = Robot('Robotto')
+
+
+
+
 
 class Battlefield:
-    
- 
-    
     def __init__(self) -> None:
-       self.herd = Herd()
-       self.feet = Fleet()    
+        self.dinosaur = dinosaur
+        self.robot = robot
+
 
 
     def run_game(self):
@@ -32,11 +32,26 @@ class Battlefield:
 
     def battle_phase(self,):
         while dinosaur.health > 0 and robot.health > 0:
-            dinosaur.attack_robot(robot)
+            robot.select_active_weapon()
             robot.attack_dinosaur(dinosaur)
-            if robot.health <= 0 or dinosaur.health <= 0:
+            if dinosaur.health <= 0:
                 print('we have a winnner!!!')
+            elif dinosaur.health > 0:
+                dinosaur.attack_robot(robot)
+                if robot.health <= 0:
+                    print('we have a winnner!!!')
+
             
+            
+    
+    def display_winner(self):
+        if dinosaur.health <= 0:
+            print(f'{robot.name} is our winner')
+        elif robot.health <= 0:
+            print(f'{dinosaur.name} is our winner')
+            
+       
+
             
     
     def display_winner(self):
