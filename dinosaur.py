@@ -13,7 +13,7 @@ class Dinosaur:
 # This attack method should lower a Robot’s health by the value of the Dinosaur’s attack_power. 
     def attack_robot(self,robot):
         robot.health -= self.attack_power
-        print(f'robot health: {robot.health}')
+        print(f'dinosaur damages robot by {self.attack_power}. Robot health is now {robot.health}')
         
         
         
