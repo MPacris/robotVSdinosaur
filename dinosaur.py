@@ -1,6 +1,8 @@
 #(10 points): As a developer, I want a Dinosaur to have a name, health, and attack_power.  
 
-class Robot:
+class Dinosaur:
+
+#attempted to add health to the instance and run it through for all
 
     def __init__(self, name, attack_power) -> None:
         self.name = name

@@ -1,16 +1,21 @@
+import random
+
 from robot import Robot
-from robot import Robot
+from dinosaur import Dinosaur
 
 from herd import Herd
+from fleet import Fleet
 
-
-dinosaur = Robot('Trex',20)
-robot = Robot('Robotto')
-
+dinosaur = random.choice(Herd)
+robot = random.choice(Robot)
 
 class Battlefield:
+    
+ 
+    
     def __init__(self) -> None:
-       self.run_game
+       self.herd = Herd()
+       self.feet = Fleet()    
 
 
     def run_game(self):

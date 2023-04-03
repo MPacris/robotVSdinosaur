@@ -1,14 +1,16 @@
 from robot import Robot
-from robot import Robot
+from dinosaur import Dinosaur
 
 
-dinosaur = Robot('Trex',30)
+dinosaur = Dinosaur('Trex',30)
 robot = Robot('Robotto')
 
 
 class Battlefield:
     def __init__(self) -> None:
-       self.run_game
+        self.dinosaur = dinosaur
+        self.robot = robot
+
 
 
     def run_game(self):
@@ -26,9 +28,13 @@ class Battlefield:
     def battle_phase(self,):
         while dinosaur.health > 0 and robot.health > 0:
             dinosaur.attack_robot(robot)
-            robot.attack_dinosaur(dinosaur)
-            if robot.health <= 0 or dinosaur.health <= 0:
+            if robot.health <= 0:
                 print('we have a winnner!!!')
+                self.display_winner()
+            elif robot.attack_dinosaur(dinosaur):
+                if robot.health <= 0 or dinosaur.health <= 0:
+                    print('we have a winnner!!!')
+                    self.display_winner()
             
             
     
@@ -37,6 +43,8 @@ class Battlefield:
             print(f'{robot.name} is our winner')
         elif robot.health <= 0:
             print(f'{dinosaur.name} is our winner')
+            
+       
 
 
 
