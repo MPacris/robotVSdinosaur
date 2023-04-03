@@ -2,8 +2,10 @@ from robot import Robot
 from dinosaur import Dinosaur
 
 
+
 dinosaur = Dinosaur('Trex',30) 
 robot = Robot('Robotto')
+
 
 class Battlefield:
     def __init__(self) -> None:

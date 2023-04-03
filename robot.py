@@ -14,10 +14,7 @@ class Robot:
 #in basic version, the weapon was defined and added in with Weapon('Lazer,' 30), 
 # trying to figure a way to pick from a list and set that as the active weapon
 
-    def select_active_weapon(self):       
-        
-        
-
+    def select_active_weapon(self): 
         chosen_weapon = input(f"choose the Robot's weapon: option 1 - {self.weapons_list[0].name}, option 2 - {self.weapons_list[1].name}, or option 3 - {self.weapons_list[2].name} choose your weapon by typing in a the option number!  ")
         if chosen_weapon == '1':
                 self.active_weapon = self.weapons_list[0]
