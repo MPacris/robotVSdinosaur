@@ -4,13 +4,12 @@ from fleet import Fleet
 
 ###Tying to get it so that you choose from a list and that is the robot/dino that would feed into here, unable to find a way to bridge this gap
 
-dinosaur = Dinosaur('Trex',30) 
-robot = Fleet.select_active_robot()
+#### Originally had robot and dinosaur defined outsidfe the class.  hard coded options inside init and then changed 'robot' to 'self.robot'
 
 class Battlefield:
     def __init__(self) -> None:
-        self.dinosaur = dinosaur
-        self.robot = robot
+        self.dinosaur = Dinosaur('Trex',30) 
+        self.robot = Robot('Robotto')
 
     def run_game(self):
         self.display_welcome()
@@ -20,29 +19,27 @@ class Battlefield:
     def display_welcome(self):
         print('Welcome to the THUNDERDOME!!!!')
 
-
-
+        
         
 #(10 points): As a developer, I want the battle to conclude once either the Robot or the Dinosaur has its health points reduced to zero.
 
-    def battle_phase(self,):
-        Fleet.select_active_robot()
+    def battle_phase(self):     
 
-        while dinosaur.health > 0 and robot.health > 0:
-            robot.select_active_weapon()
-            robot.attack_dinosaur(dinosaur)
-            if dinosaur.health <= 0:
+        while self.dinosaur.health > 0 and self.robot.health > 0:
+            self.robot.select_active_weapon()
+            self.robot.attack_dinosaur(self.dinosaur)
+            if self.dinosaur.health <= 0:
                 print('we have a winnner!!!')
-            elif dinosaur.health > 0:
-                dinosaur.attack_robot(robot)
-                if robot.health <= 0:
+            elif self.dinosaur.health > 0:
+                self.dinosaur.attack_robot(self.robot)
+                if self.robot.health <= 0:
                     print('we have a winnner!!!')
 
     def display_winner(self):
-        if dinosaur.health <= 0:
-            print(f'{robot.name} is our winner')
-        elif robot.health <= 0:
-            print(f'{dinosaur.name} is our winner')
+        if self.dinosaur.health <= 0:
+            print(f'{self.robot.name} is our winner')
+        elif self.robot.health <= 0:
+            print(f'{self.dinosaur.name} is our winner')
             
     
     
