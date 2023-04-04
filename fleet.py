@@ -1,8 +1,10 @@
 import random
 from robot import Robot
+from weapon import Weapon
 
 class Fleet:
     def __init__(self) -> None:
+        self.active_robot = ()
         self.robots_list = [Robot('Robotto'), Robot('Terminator'), Robot('Johnny5')]
     
     def select_active_robot (self):
@@ -13,6 +15,8 @@ class Fleet:
             self.active_robot = self.robots_list[1]
         else:
             self.active_robot = self.robots_list[2]
+
+
 
     
 

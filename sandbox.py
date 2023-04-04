@@ -1,11 +1,11 @@
 from robot import Robot
 from dinosaur import Dinosaur
+from fleet import Fleet
 
-
+###Tying to get it so that you choose from a list and that is the robot/dino that would feed into here, unable to find a way to bridge this gap
 
 dinosaur = Dinosaur('Trex',30) 
-robot = Robot('Robotto')
-
+robot = Fleet.select_active_robot()
 
 class Battlefield:
     def __init__(self) -> None:
@@ -19,10 +19,15 @@ class Battlefield:
 
     def display_welcome(self):
         print('Welcome to the THUNDERDOME!!!!')
+
+
+
         
 #(10 points): As a developer, I want the battle to conclude once either the Robot or the Dinosaur has its health points reduced to zero.
 
     def battle_phase(self,):
+        Fleet.select_active_robot()
+
         while dinosaur.health > 0 and robot.health > 0:
             robot.select_active_weapon()
             robot.attack_dinosaur(dinosaur)
